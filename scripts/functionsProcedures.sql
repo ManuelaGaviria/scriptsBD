@@ -142,7 +142,7 @@ END;
 
 --Trigger para la funcion calcular promedio
 CREATE OR REPLACE TRIGGER TRG_CALCULAR_NOTA_FINAL
-BEFORE UPDATE ON NOTAS
+BEFORE INSERT OR UPDATE ON NOTAS
 FOR EACH ROW
 DECLARE
 	v_promedio NUMBER(5, 2);
@@ -154,8 +154,10 @@ BEGIN
     	-- Actualizar el estado seg�n el promedio
     	IF v_promedio >= 4.0 THEN
         	:NEW.ESTADO := 1; -- Asigna el valor directamente a :NEW
+          :NEW.PROMEDIO := v_promedio;
     	ELSE
         	:NEW.ESTADO := 2; -- Asigna el valor directamente a :NEW
+          :NEW.PROMEDIO := v_promedio;
     	END IF;
 	END IF; -- Si no hay notas, no hace nada
 END;
