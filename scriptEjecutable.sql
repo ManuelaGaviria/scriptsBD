@@ -30,14 +30,8 @@ connect us_dbAcademy/1234
 show user
 */
 
-@scripts/DBAcademy.sql
-@scripts/functionsProcedures.sql
-@scripts/packages.sql
 
---Debe cambiarle el path para que coincida en su pc y ejecutar en la terminal: 
--- start C:\Users\ASUS\Documents\GitHub\scriptsBD\scriptEjecutable.sql
-/*
 start C:\Users\ASUS\Documents\GitHub\scriptsBD\scripts\DBAcademy.sql
 start C:\Users\ASUS\Documents\GitHub\scriptsBD\scripts\functionsProcedures.sql
 start C:\Users\ASUS\Documents\GitHub\scriptsBD\scripts\packages.sql
-*/
+

@@ -1,4 +1,4 @@
--- Especificación del paquete
+-- Especificaciï¿½n del paquete
 CREATE OR REPLACE PACKAGE PKG_ACADEMIA
 AS
   FUNCTION function_calcular_promedio(
@@ -23,11 +23,11 @@ AS
     sumarespuesta := nota_examen_oral + nota_examen_escrito;
     respuesta := sumarespuesta / 2;
     RETURN respuesta;
-  END function_calcular_promedio;  -- Nombre de la función debe coincidir
+  END function_calcular_promedio;  -- Nombre de la funciï¿½n debe coincidir
 END PKG_ACADEMIA;
 /
 
--- Especificación del paquete
+-- Especificaciï¿½n del paquete
 CREATE OR REPLACE PACKAGE PKG_CLASES_PROGRAMADAS
 AS
   PROCEDURE procedure_auditoria_clases_prog (
@@ -55,7 +55,7 @@ AS
   IS
   descripcion VARCHAR2(50);
   BEGIN
-    -- Aquí va la lógica del procedimiento
+    -- Aquï¿½ va la lï¿½gica del procedimiento
     IF operacion = 'INSERT' THEN
       descripcion := 'Registro insertado';
     ELSIF operacion = 'UPDATE' THEN
@@ -131,11 +131,11 @@ BEGIN
       AND CODIGO_SALON = :NEW.CODIGO_SALON;
   END IF;
   PKG_CLASES_PROGRAMADAS.procedure_auditoria_clases_prog('CLASES_PROGRAMADAS', 'INSERT', :NEW.CODIGO_CLASE_PROGRAMADA);
-	-- Validar que la actualización afectó exactamente un registro
+	-- Validar que la actualizaciï¿½n afectï¿½ exactamente un registro
 	IF SQL%ROWCOUNT = 0 THEN
     	RAISE_APPLICATION_ERROR(
         	-20002,
-        	'No se encontró un cupo correspondiente para la clase programada.'
+        	'No se encontrï¿½ un cupo correspondiente para la clase programada.'
     	);
 	END IF;
 END;
@@ -148,11 +148,11 @@ FOR EACH ROW
 DECLARE
 	v_promedio NUMBER(5, 2);
 BEGIN
-	-- Verificar si ambas notas están presentes
+	-- Verificar si ambas notas estï¿½n presentes
 	IF :NEW.NOTA_EXAMEN_ORAL IS NOT NULL AND :NEW.NOTA_EXAMEN_ESCRITO IS NOT NULL THEN
     	-- Calcular el promedio
-    	v_promedio := PKG_CLASES_PROGRAMADAS.function_calcular_promedio(:NEW.NOTA_EXAMEN_ORAL, :NEW.NOTA_EXAMEN_ESCRITO);
-    	-- Actualizar el estado según el promedio
+    	v_promedio := PKG_ACADEMIA.function_calcular_promedio(:NEW.NOTA_EXAMEN_ORAL, :NEW.NOTA_EXAMEN_ESCRITO);
+    	-- Actualizar el estado segï¿½n el promedio
     	IF v_promedio >= 4.0 THEN
         	:NEW.ESTADO := 1; -- Asigna el valor directamente a :NEW
     	ELSE
