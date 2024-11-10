@@ -1,0 +1,17 @@
+{
+    "nivel": {
+        "clases": [{}],
+        "examenes":
+            [
+                {
+                    "oral": {},
+                    "escrito": 
+                        {
+                            "id": 0,
+                            "preguntas": [],
+                            "respuestas": []
+                        }
+                }
+            ]
+    }
+}

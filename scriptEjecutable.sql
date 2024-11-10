@@ -32,6 +32,6 @@ show user
 
 
 start C:\Users\ASUS\Documents\GitHub\scriptsBD\scripts\DBAcademy.sql
-start C:\Users\ASUS\Documents\GitHub\scriptsBD\scripts\functionsProcedures.sql
+start C:\Users\ASUS\Documents\GitHub\scriptsBD\scripts\triggers.sql
 start C:\Users\ASUS\Documents\GitHub\scriptsBD\scripts\packages.sql
 
